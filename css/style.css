@@ -1,4 +1,129 @@
-body{
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Add a working "Skip to Main Content" link to each page by adding an id to the main tag and then adding an anchor (a tag) earlier in the file that will link to it. */
+/* Comment out the existing styling for the li element. */
+/* Change the nav element to use inline-block and have a width of about 80%. */
+/* Use a descendent selector to style only the image in the nav to have a width of about 10%. */
+/* Style the grid class to use a two column grid where each column is approximately 40%.   Don't forget that to style a class element your selector should start with a period. */
+/* There is a good chance that your site will not look like mine.  Use the descendent selector to style only the images in the grid class to have a width of 100%.  (Check the parks page to make sure this change doesn't affect any images in the flex class.)    */
+/* Go back and adjust the grid class again.  Play with the justify-content, align-items, and row-gap property values to copy the look of the screenshots above. */
+/* Style the flex class to use flex.  Play with the flex-wrap and justify-content property values to copy the look of the screenshots above. */
+/* Remove some of the rules and apply new ones focusing on the general properties display, width, and list-style-type, as well as some of the supplemental properties such as grid-template-columns, flex-wrap,  justify-content, and/or align-items */
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 150%;
+  background-color: beige;
+}
+
+header {
+  background-color: #99ff99;
+  text-align: center;
+
+}
+
+nav {
+  display: inline-block;
+  width: 80%;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 20px;
+
+}
+
+nav ul {
+  display: inline-block;
+  width: 70%;
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+}
+
+nav img {
+  width: 10%;
+  display: inline-block;
+  vertical-align: middle;
+
+}
+
+nav li {
+  display: inline-block;
+  width: 30%;
+  font-size: 25px;
+  background-color: #006400;
+
+}
+
+
+/* li { 
+  display: inline-block;
+  width: 30%;
+  text-align: center;
+}*/
+
+li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+main {
+  background-color: #006400;
+  color: #ffffff;
+  font-size: 100%;
+}
+
+main a {
+
+  font-style: italic;
+  color: #ffffff;
+  font-style: italic;
+
+
+}
+
+footer {
+  background-color: #99ff99;
+  font-size: 15px;
+  text-align: center;
+
+}
+
+h1 {
+
+  font-family: cursive;
+  color: #006400;
+}
+
+p {
+  line-height: 30px;
+}
+
+#content,
+#parkcontent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.content_container {
+  width: 85%;
+  display: grid;
+  grid-template-columns: 40% 40%;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+}
+
+.parkcontent_container {
+  width: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.content_container img{
+  width: 100%;
+}
+
+.parkcontent_container img{
+  width: 18%;
 }
