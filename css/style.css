@@ -1,81 +1,85 @@
-/* Add a working "Skip to Main Content" link to each page by adding an id to the main tag and then adding an anchor (a tag) earlier in the file that will link to it. */
-/* Comment out the existing styling for the li element. */
-/* Change the nav element to use inline-block and have a width of about 80%. */
-/* Use a descendent selector to style only the image in the nav to have a width of about 10%. */
-/* Style the grid class to use a two column grid where each column is approximately 40%.   Don't forget that to style a class element your selector should start with a period. */
-/* There is a good chance that your site will not look like mine.  Use the descendent selector to style only the images in the grid class to have a width of 100%.  (Check the parks page to make sure this change doesn't affect any images in the flex class.)    */
-/* Go back and adjust the grid class again.  Play with the justify-content, align-items, and row-gap property values to copy the look of the screenshots above. */
-/* Style the flex class to use flex.  Play with the flex-wrap and justify-content property values to copy the look of the screenshots above. */
-/* Remove some of the rules and apply new ones focusing on the general properties display, width, and list-style-type, as well as some of the supplemental properties such as grid-template-columns, flex-wrap,  justify-content, and/or align-items */
+/* Style all images using the box model. At a minimum use border, padding, and border-radius.
+
+Apply the grid property to at least one parent element. Use at least two columns, but feel free to use more!
+
+Apply the flex property to at least one parent element. The navigation bar is one place to use flex. You can also use it on images if you would like.
+
+Update at least one element using the hover pseudo-class. Make sure that the hover property does something interesting. I encourage you to do an internet search on some common transitions and try those.
+
+Implement the nth-child selector. In my example I used this on the flex page where I gave every other image a different border-radius. Don't forget, if you are styling an advanced selector it can be a little trickier to use the pseudo-classes. Work slowly and carefully. */
+
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 150%;
-  background-color: beige;
 }
+
+/* Visible when focused */
+.skip{
+    position: absolute;
+    top: -40px;
+    left: 10px;
+    background-color: #006400;
+    color: #ffffff;
+    padding: 8px;
+    text-decoration: none;
+}
+
+.skip:focus {
+    top: 10px;
+}
+/* nav section */
 
 header {
   background-color: #99ff99;
   text-align: center;
-
+  display: flex;
+  justify-content: center;
 }
 
 nav {
-  display: inline-block;
-  width: 80%;
+  width: 85%;
   text-align: center;
-  vertical-align: middle;
-  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 
 }
 
-nav ul {
-  display: inline-block;
-  width: 70%;
-  padding: 0;
-  margin: 0;
-  vertical-align: middle;
+.navbar {
+  display: flex;
+  gap: 4rem;
+  list-style-type: none;
 }
-
-nav img {
-  width: 10%;
-  display: inline-block;
-  vertical-align: middle;
-
-}
-
-nav li {
-  display: inline-block;
-  width: 30%;
-  font-size: 25px;
-  background-color: #006400;
-
-}
-
-
-/* li { 
-  display: inline-block;
-  width: 30%;
-  text-align: center;
-}*/
 
 li a {
   text-decoration: none;
-  color: #ffffff;
+  color: #000000;
 }
 
-main {
-  background-color: #006400;
+section {
   color: #ffffff;
   font-size: 100%;
 }
 
-main a {
+.navbar a:hover {
+    background-color: #006400;
+    color: #ffffff;
+    padding: 10px;
+    
+}
 
+section a {
   font-style: italic;
   color: #ffffff;
   font-style: italic;
+}
 
+.right{
+  background-color: #006400;
+}
 
+.home_content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 footer {
@@ -88,31 +92,65 @@ footer {
 h1 {
 
   font-family: cursive;
-  color: #006400;
+  color: #ffffff;
 }
 
 p {
   line-height: 30px;
 }
 
-#content,
-#parkcontent {
+/* index  */
+
+#index_content {
   width: 100%;
+  height: fit-content;
+  padding: 3rem 0;
   display: flex;
   justify-content: center;
 }
 
-.content_container {
+.index_container {
   width: 85%;
   display: grid;
-  grid-template-columns: 40% 40%;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  text-align: center;
 }
 
-.parkcontent_container {
+.index_container img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.index_container .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 30px;
+}
+
+/* neighbourhook walks */
+#content,#parkcontent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+.content_container{
+  width: 85%;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.content_container img{
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* walks in the park */
+.parkcontent_container{
   width: 85%;
   display: flex;
   flex-wrap: wrap;
@@ -120,10 +158,11 @@ p {
   gap: 1rem;
 }
 
-.content_container img{
-  width: 100%;
+.parkcontent_container img{
+  width:18%;
 }
 
-.parkcontent_container img{
-  width: 18%;
+.parkcontent_container img:nth-child(even){
+  border-radius: 70px;
 }
+
